@@ -1,0 +1,84 @@
+.background{
+	background-image:url("pink_rice.png");
+	height:800px;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+.logo{
+	margin-left: 265px;
+}
+.textBox{
+	font-family: 'Arial';
+	font-size: 12px;
+	margin-left: 235px;
+	margin-top: 10px;
+	width: 700px;
+	height: 165px;
+	border-style: solid;
+	border-color: #ffe6e6;
+	background-color: #ffe6e6;
+	border-radius: 25px;
+}
+.instr{
+	font-weight: bold;
+	color: #777;
+	font-size:16px;
+}
+p{
+	padding-left: 15px;
+	color: #777;
+}
+.numBox{
+	margin-left: 225px;
+	margin-top: 10px;
+	width: 180px;
+	height:140px;
+	background-color: #ffe6e6;
+	border-style: solid;
+	border-color: #ffe6e6;
+	border-radius: 25px;
+
+	
+}
+.crystalBox{
+	margin-top:10px;
+	margin-right: 15px;
+	margin-left: -95px;
+	width: 485px;
+	height:140px;
+	background-color: #ffe6e6;
+	border-style:solid;
+	border-color: #ffe6e6;
+	border-radius: 25px;
+}
+.img-circle{
+	margin-top:15px;
+	margin-left: 15px;
+}
+.score{
+	margin-top: 10px;
+	margin-left: 225px;
+	width:695px;
+	height:100px;
+	background-color: #ffe6e6;
+	border-style:solid;
+	border-color: #ffe6e6;
+	border-radius: 25px;
+}
+.wins{
+	margin-top: 10px;
+}
+#num-goal{
+	font-size: 30px;
+	margin-left:45px;
+}
+#userNum{
+	font-size: 30px;
+	margin-left:45px;
+}
+#outcome{
+	font-size: 65px;
+	margin-left: 82px;
+	margin-top: -25px;
+	color: #777;
+}
