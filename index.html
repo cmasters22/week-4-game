@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gem Collector</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class= "col-md-12">
+	   <div class="background">
+		<div class="row">
+			<img class="logo" src="logo.png" alt="logo">
+		</div>
+		<div class="row">
+			<div class="textBox">
+				<p class="instr"> Instructions: </p>
+				<p> You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. </p>
+				<p> You win the game by matching your total score to random number, you lose the game if your total score goes above the random number. </p>
+				<p> The value of each crystal is hidden from you until you click on it. Each time when the game starts, the game will change the values of each crystal. </p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="numBox"> 
+					<p style="font-weight: bold"> Number goal: <br><span id="num-goal"></span>  </p>
+						<p style="font-weight: bold"> Your number: <br><span id="userNum"></span></p>
+				</div>
+			</div>
+			<div class="col-md-1"> </div>
+			<div class="col-md-6">
+				<div class="crystalBox">
+					<img class="img-circle" id="blue-gem" src="blueGem.png" alt="blue" width="94" height="96">
+					<img class="img-circle" id="red-gem" src="red.png" alt="red" width="94" height="96">
+					<img class="img-circle" id="diamond" src="diamond.png" alt="diamond" width="94" height="96">
+					<img class="img-circle" id="purple" src="purple.png" alt="purple" width="94" height="96">
+				</div>
+			</div>
+		</div>
+			<div class="score"> 
+				<div class="col-md-3">
+					<p class="wins"> Wins: <span id="wins"></span></p>
+					<p> Losses: <span id="losses"></span></p> </div>
+					<div class= "col-md-9">
+						<div> <span id="outcome"></span></div>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	var compNum = Math.floor((Math.random() * 120) + 1);
+
+	$("#num-goal").text(compNum);
+
+	var total = 0;
+
+	var wins= 0;
+	var losses=0;
+	var randNum = Math.floor((Math.random() * 12) + 1);
+	var randNum1= Math.floor((Math.random() * 12) + 1);
+	var randNum2= Math.floor((Math.random() * 12) + 1);
+	var randNum3= Math.floor((Math.random() * 12) + 1);
+	
+	$(document).ready(function() {
+		
+
+		$("#blue-gem").on("click", function()
+		{
+			$("#outcome").hide();
+			total= total + randNum;
+			$("#userNum").text(total);
+			results(total);			
+
+		});
+			
+		$("#red-gem").on("click", function()
+		{
+			$("#outcome").hide();
+			total= total + randNum1;
+			$("#userNum").text(total);
+			results();	
+			
+		});
+
+		$("#diamond").on("click", function()
+		{
+			$("#outcome").hide();
+			total= total + randNum2;
+			$("#userNum").text(total);
+			results();	
+			
+		});
+
+		$("#purple").on("click", function()
+		{
+			$("#outcome").hide();
+			total= total + randNum3;
+			$("#userNum").text(total);	
+			results();	
+							
+		});
+
+		var reset = (function(){
+		$("#num-goal").empty();
+		compNum = Math.floor((Math.random() * 120) + 1);
+		$("#num-goal").text(compNum);
+		total = 0;
+		$("#userNum").text(total);
+	});
+
+	var results = (function()
+	{
+		if (compNum === total)
+		{
+			wins++;
+			$("#wins").text(wins);
+			$("#outcome").show();
+			$("#outcome").text("You win!");
+			reset();
+		}
+		else if (compNum < total)
+		{
+			losses++;
+			$("#losses").text(losses);
+			$("#outcome").show();
+			$("#outcome").text("You lose!");
+			reset ();
+		}
+	
+	});
+
+});
+			
+
+
+
+
+</script>
+
+</body>
+</html>
